@@ -1,0 +1,1 @@
+php -f C:\wamp\www\merged_doc\scripts\auto_email.php

@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+	<script>
+function validateForm()
+{
+var x =document.forms["myForm"]["fname"].value;
+if(x==null || x=="")
+{
+alert("invalid first name");
+return false;
+}
+
+x=document.forms["myForm"]["lname"].value;
+if(x==null || x=="")
+{
+alert("invalid  last name");
+return false;
+}
+x=document.forms["myForm"]["enroll"].value;
+if(x==null || x=="")
+{
+alert("invalid Enrollment");
+return false;
+}
+
+var p1=document.forms["myForm"]["pass1"].value;
+var p2=document.forms["myForm"]["pass2"].value;
+var n=p1.localeCompare(p2);
+if(p1 == null || p2==null || p1==""||p2=="")
+{
+alert("Null Password");
+return false ;
+}
+if(n==-1 ||n==1)
+{
+alert("password mismatch");
+return false ;
+}
+
+x=document.forms["myForm"]["email"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("Not a valid e-mail address");
+  return false;
+  }
+}
+</script>
+   <title>Web site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Web site" />
+    <meta name="description" content="Site description here" />
+    <meta name="keywords" content="keywords here" />
+    <meta name="language" content="en" />
+    <meta name="subject" content="Site subject here" />
+    <meta name="robots" content="All" />
+    <meta name="copyright" content="Your company" />
+    <meta name="abstract" content="Site description here" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <link id="theme" rel="stylesheet" type="text/css" href="css/style.css" title="theme" />
+  </head>
+  <body> 
+    <div id="wrapper"> 
+      <div id="bg"> 
+        <div id="header"></div>  
+        <div id="page"> 
+          <div id="container"> 
+            <!-- banner -->  
+            <div id="banner"></div>  
+            <!-- end banner -->  
+            <!-- horizontal navigation -->  
+            <div id="nav1"> 
+              <ul>
+                <li>
+                <a href="student_register.html" shape="rect">Register as Student</a>
+                  
+                </li>
+                
+              </ul> 
+            </div>  
+            <!-- end horizontal navigation -->  
+            <!--  content -->  
+           <div id="content"> 
+              <div id="center"> <br>
+                <div id="welcome"> 
+                  <h3>Student Registration </h3>
+
+
+
+
+
+                 <!--   <form enctype="multipart/form-data" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="post">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="99999999" />
+                        <div><input name="userfile" type="file" /></div>
+                        <div><input type="submit" value="Submit" /></div>
+                    </form>
+
+				  <!-- Start of FORM -->
+<form enctype="multipart/form-data" name="myForm" method="post" action="student_register.php" onsubmit="return validateForm();">
+  <p><br>
+    Upload Image
+    <input type="hidden" name="MAX_FILE_SIZE" value="99999999" />
+    <div><input name="userfile" type="file" /></div> <br>
+  First Name <br>
+  <input type="text" name="fname" value=""> <br>
+    Last Name <br>
+  <input type="text" name="lname" value=""> <br>
+   Guardian Name <br>
+  <input type="text" name="guardian" value=""> <br>
+    Enrollement/Employee ID <br>
+  <input type="text" name="enroll" value=""> <br>
+  <br>
+    Password<br>
+  <input type="password" name="pass1" value="">
+  <br>
+    Re-enter Password<br>
+  <input type="password" name="pass2" value="">
+    
+  <br>
+    Sex<br>
+  <input name="sex" type="radio" value="M">Male<br>
+  <input name="sex" type="radio" checked value="F">Female<br>
+    date of Birth<br>
+  <input type="text" name="dob" value="yyyy-mm-dd">
+  <br>
+	Branch <br>
+  <input type="text" name="branch" value=""> <br>
+    Batch(Year of Joining) <br>
+  <input type="text" name="batch" value=""> <br>
+    
+    Health Card No <br>
+  <input type="text" name="health" value=""> <br>
+    Blood Group <br>
+  <input type="text" name="blood" value=""> <br>
+    Email ID <br>
+  <input type="text" name="email" value=""> <br>
+    Contact No <br>
+  <input type="text" name="contact" value=""> <br>
+    
+  Emergency Contact No <br>
+	<input type="text" name="emergency" value=""> <br>
+Hostel Name<br>
+ <select name="hostel" align="left">
+    <option value="prashar">Prashar</option>
+    <option value="renuka">Renuka hall</option>
+    <option selected value="nako">Nako</option>
+    <option value="dashir">Dashir</option>
+    <option value="bamboo">Bamboo</option>
+  </select>
+<br>
+Address<br>
+<textarea name="address" rows="8" cols="45" ></textarea>
+<br> 
+  </p>
+  <p>
+    <input name="submit" type="submit" id="submit" formaction="student_register.php" formmethod="POST" value="register" />
+    <br>
+    <br>
+  </p>
+
+
+
+
+
+
+</form>
+
+
+
+                    <!-- End of FORM -->
+                  
+                  
+                  </div> 
+              </div>  
+              <div class="clear" style="height:40px"></div> 
+            </div>  
+            <!-- end content --> 
+          </div>  
+          <!-- end container --> 
+        </div>  
+        <div id="footerWrapper"> 
+          <div id="footer"> 
+            <p style="padding-top:10px"> 
+IIT MANDI-HOSPITAL MANAGEMENT SYSTEM
+              
+            </p> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </body>
+</html>

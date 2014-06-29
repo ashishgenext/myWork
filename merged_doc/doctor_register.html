@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+	<script>
+function validateForm()
+{
+var x =document.forms["myForm"]["fname"].value;
+if(x==null || x=="")
+{
+alert("invalid first name");
+return false;
+}
+
+x=document.forms["myForm"]["lname"].value;
+if(x==null || x=="")
+{
+alert("invalid  last name");
+return false;
+}
+x=document.forms["myForm"]["emp_id"].value;
+if(x==null || x=="")
+{
+alert("invalid Employee ID");
+return false;
+}
+
+var p1=document.forms["myForm"]["pass1"].value;
+var p2=document.forms["myForm"]["pass2"].value;
+var n=p1.localeCompare(p2);
+
+if(n==-1 ||n==1)
+{
+alert("password mismatch")
+return false ;
+}
+x=document.forms["myForm"]["email"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("Not a valid e-mail address");
+  return false;
+  }
+}
+</script>
+    <title>Web site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Web site" />
+    <meta name="description" content="Site description here" />
+    <meta name="keywords" content="keywords here" />
+    <meta name="language" content="en" />
+    <meta name="subject" content="Site subject here" />
+    <meta name="robots" content="All" />
+    <meta name="copyright" content="Your company" />
+    <meta name="abstract" content="Site description here" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <link id="theme" rel="stylesheet" type="text/css" href="css/style.css" title="theme" />
+  </head>
+  <body> 
+    <div id="wrapper"> 
+      <div id="bg"> 
+        <div id="header"></div>  
+        <div id="page"> 
+          <div id="container"> 
+            <!-- banner -->  
+            <div id="banner"></div>  
+            <!-- end banner -->  
+            <!-- horizontal navigation -->  
+            <div id="nav1"> 
+              <ul>
+                <li id="current" style="border:none">
+                  <a href="student_register.html" shape="rect">Register as Student</a>
+                </li>
+                <li>
+                  <a href="doctor_register.html" shape="rect">Register as Doctor</a>
+                </li>
+                <li>
+                  <a href="employee_register.html" shape="rect">Hospital Employee Registration</a>
+                </li>
+                
+              </ul> 
+            </div>  
+            <!-- end horizontal navigation -->  
+            <!--  content -->  
+           <div id="content"> 
+              <div id="center"> <br>
+                <div id="welcome"> 
+                  <h3>Doctor/Hospital Employee Registration </h3>  
+				  
+				  <!-- Start of FORM -->
+<form name="myForm" method="post" action="doctor_register.php" onsubmit="return validateForm();">
+<br>
+
+First Name <br>
+<input type="text" name="fname" value=""> <br>
+Last Name <br>
+<input type="text" name="lname" value=""> <br>
+Employee ID <br>
+<input type="text" name="emp_id" value=""> <br>
+<br>
+Password<br>
+<input type="password" name="pass1" value="">
+<br>
+Re-enter Password<br>
+<input type="password" name="pass2" value="">
+
+<br>
+Sex<br>
+<input name="sex" type="radio" value="M">Male<br>
+<input name="sex" type="radio" checked value="F">Female<br>
+Designation <br>
+<input type="text" name="desig_n" value=""> <br>
+Specialisation <br>
+<input type="text" name="special_i" value=""> <br>
+
+Experience <br>
+<input type="text" name="exp" value=""> <br>
+
+Email ID <br>
+<input type="text" name="email" value=""> <br>
+Contact No <br>
+<input type="text" name="contact" value=""> <br>
+about Doctor<br>
+<textarea name="about" rows="15" cols="92" ></textarea>
+
+<br>
+<br>
+
+
+
+<input name="submit" type="submit" id="submit" formaction="doctor_register.php" formmethod="POST" value="register" />
+
+
+</form>
+<!-- End of FORM -->
+                  
+                  
+                  </div> 
+              </div>  
+              <div class="clear" style="height:40px"></div> 
+            </div>  
+            <!-- end content --> 
+          </div>  
+          <!-- end container --> 
+        </div>  
+        <div id="footerWrapper"> 
+          <div id="footer"> 
+            <p style="padding-top:10px"> 
+IIT MANDI-HOSPITAL MANAGEMENT SYSTEM
+              
+            </p> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </body>
+</html>
